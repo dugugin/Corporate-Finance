@@ -1,0 +1,225 @@
+\usepackage{multirow}%表格
+\usepackage{latexsym}
+\usepackage{amsmath,amssymb}
+\usepackage{color,xcolor}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+%-------------------------超链接颜色---------------------------
+%\hypersetup{
+%%	bookmarks=true,
+%	colorlinks=true,%给超链接文字上色
+%	linkcolor=blue,
+%	urlcolor=blue,
+%	citecolor=true,
+%	citecolor=blue,
+%%	pdftex,
+%	linktocpage=true,   % makes the page number as hyperlink in table of content
+%	hyperindex=true
+%}
+
+
+%--------------------------模板风格--------------------------
+%\usetheme{AnnArbor}
+%\usetheme{PaloAlto}
+%\usetheme{Antibes}
+\usetheme{CambridgeUS}	%有上下导航
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}	%上面多层目录导航
+%\usetheme{PaloAlto}
+%\usetheme{Singapore}
+%\usetheme{Warsaw}
+
+
+%-------------板式
+%\usecolortheme{beaver}		%红色系
+%\usecolortheme{default}
+%\usecolortheme{crane}		%上导航黄色背景
+%\usecolortheme{dolphin}	%上导航蓝色背景
+%\usecolortheme{rose}
+%\usecolortheme{dove}		%上导航白色背景，灰色割线
+\usecolortheme{whale}		%标题深蓝色背景
+
+%---------------------项目符号
+
+\setbeamertemplate{items}[triangle]
+
+
+%----------------------------option
+%\useinnertheme{}
+%标题页，列表项目、定理环境、图表环境、脚注default、circles、rectangles、rounded、inmargin
+
+%\useoutertheme{}
+%顶部尾部的信息栏、边栏、图标、帧标题等一帧之外的格式。预定义的外部主题有default、infolines、miniframes、smoothbars、sidebar、split、shadow、tree、smoothtree
+
+%\usecolortheme{beaver1}		%改成了蓝色
+%default、albatross、beaver、beetle、crane、dolphine、dove、fly、lily、orchid、rose、seagull、seahorse、sidebartab、structure、whale、wolverine
+
+
+%------------------------------------------------------------
+%% Sets the colors for structure and footlines
+%\setbeamercolor*{structure}{fg=BayreuthBlue1,bg=white}
+%\setbeamercolor*{footline}{fg=black,bg=BayreuthGreen}
+%\setbeamercolor*{nofootline}{bg=white}
+%
+%% Sets the colors of title page and frame titles
+%\setbeamercolor*{titlelike}{parent=structure,bg=white}
+%\setbeamercolor*{frametitle}{parent=palette primary}
+%
+%% Sets the colors of the seperation items
+%\setbeamercolor*{title separator}{fg=BayreuthBlue1}
+%\setbeamercolor*{separation line}{parent=palette primary}
+%\setbeamercolor*{fine separation line}{parent=palette primary}
+%
+%% Sets the colors for normal blocks
+%\setbeamercolor*{block title}{parent=palette primary}
+%\setbeamercolor*{block body}{parent=normal text,use=block title,bg=block title.bg!20!bg}
+%
+%% Sets the colors for alert blocks
+%\setbeamercolor*{block title alerted}{use=alerted text,fg=white,bg=alerted text.fg!85!black!80!white}
+%\setbeamercolor*{block body alerted}{parent=normal text,use=block title alerted,bg=block title alerted.bg!20!bg}
+%
+%% Sets the colors for example blocks
+%\setbeamercolor*{block title example}{parent=palette secondary}
+%\setbeamercolor*{block body example}{parent=normal text,use=block title example,bg=block title example.bg!20!bg}
+%
+%% Sets the colors for footnotes
+%\setbeamercolor*{footnote}{fg=BayreuthBlue1}
+%\setbeamercolor*{footnote mark}{fg=.}
+
+
+%--------------------------定理中文化-----------------------
+%\newtheorem{prop}{Proposition}
+\theoremstyle{definition}
+%\theoremstyle{plain}
+%\theoremstyle{remark}
+\newtheorem*{prop}{命题}%*不自动编号{prop代号}{自动输出label}
+\newtheorem*{theo}{定理}
+\newtheorem*{ass}{假设}
+\newtheorem*{define}{定义}
+\newtheorem*{eg}{例}
+\renewcommand\figurename{图}
+\renewcommand\tablename{表}
+
+%----------------------------字体--------------------
+\usefonttheme[onlymath]{serif}
+%\usefonttheme{}
+%预定义的beamer字体主要包括default、professionalfonts、serif、structurebold、structureitalicserif、structuresmallcapsserif等。
+%其中默认字体主题default的效果是整个幻灯片使用无衬线字体，这是多数幻灯片的选择；serif主题则是衬线字体，不过此时最好使用较大的字号和较粗的字体；professionalfonts不对字体有特别的设置，需要使用另外的专门的宏包进行设置；structure开头的几个主题则对beamer中的几个结构有特别设置。
+%----------------------设置字体----------------------%
+\usepackage{xeCJK}%中文字体
+%-----------------------英文字体
+%\usefonttheme{professionalfonts}
+%\defaultfontfeatures{Scale=MatchLowercase} % 这个参数保证 serif、sans-serif 和 monospace 字体在小写时大小匹配
+%\setmainfont[Mapping=tex-text]{Arial} % %Arial设置主字体，使用 XeTeX 的 text-mapping 方案，正确显示 LaTeX 样式的双引号（`` ''）
+% \setmainfont[Mapping=tex-text]{Palatino Linotype}
+%\setsansfont[Mapping=tex-text]{Arial}      %设置衬线字体
+%\setsansfont[Mapping=tex-text]{DejaVu Sans}
+
+%\setmonofont{Courier New}                  %设置mono字体
+% \setmonofont{Monaco}
+%\setmonofont{DejaVu Sans Mono}
+
+%-----------------------设置中文字体
+%\setmainfont[BoldFont={timesbd.ttf}]{times.ttf}
+
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-Bold}]{NotoSerifCJKsc-Regular}%衬线字体 缺省中文字体为
+%\setCJKsansfont{黑体}
+%\setCJKmonofont{仿宋_GB2312}%中文等宽字体
+\setCJKsansfont{NotoSerifCJKsc-Regular}
+
+\usepackage{fontspec}
+%\newcommand{\song}{\fontspec{NotoSerifCJKsc-Regular.otf}\selectfont}
+\newcommand{\hei}{\fontspec{NotoSerifCJKsc-Black.otf}\selectfont}
+%\newcommand{\tims}{\fontspec{times.ttf}\selectfont}%times字体
+%\newcommand{\gara}{\fontspec{GARA.TTF}\selectfont}%garamond,regular
+\newcommand{\garab}{\fontspec{GARABD.TTF}\selectfont}%garamond,bold
+\newcommand{\PERTILI}{\fontspec{PERTILI.TTF}\selectfont}%PERTILI.TTF标题细体
+
+%---------------------------title字体
+%\usepacage{titlesec}
+%\titleformat{\section}{\bfseries}
+%\titleformat*{\subsection}{\Large\sectionef}
+%\titleformat*{\subsubsection}{\large\bfseries}
+%\titleformat{\paragraph}{\bfseries}
+%\titleformat*{\subparagraph}{\large\bfseries}
+
+%\titleformat{\chapter}{\centering\Huge\bfseries}{第\,\thechapter\,章}{1em}{}
+%其 中, shape 、 before 、 after 参 数 都 被 省 略 掉 了。 format 参 数 将章标题设置为居中( \centering )显示、字号为 \Huge，字体被加粗显示 \bfseries ；在设置 s section 格式,未采用居中,而是采用默认的居左,另外将标题的字号也降了一级( \large )。 label 参数将标题的标签设置为 “第 xxx 章”格式。 sep 参数设置标签与标题内容之间以一个字(1em)的宽度为间隔。以上设置的章标题效果如下图所示：
+
+%------------------frametitle模板
+%\setbeamertemplate{frametitle}
+%{
+%	\begin{centering}
+%		\textbf{\insertframetitle}
+%		\par
+%		\insertframesubtitle
+%		\par
+%	\end{centering}
+%}
+
+
+%=====================================杂项========================
+
+\XeTeXlinebreaklocale "zh"  % 表示用中文的断行
+\XeTeXlinebreakskip = 0pt plus 1pt % 多一点调整的空间
+\linespread{1.3}%----------------------行距
+
+%------------------------目录页格式==============
+%------------------列目录时，隐藏所有的小节
+%\tableofcontents[hideallsubsections]
+
+%----------------以下命令让幻灯片在每一小节之前都显示一下目录（并突出显示出当前节目录）
+%\AtBeginSection[]
+%{ \begin{frame}
+%	\frametitle{目录}
+%	\tableofcontents[currentsection,currents section]
+%\end{frame}
+%\addtocounter{framenumber}{-1}  %目录页不计算页码
+%}
+
+%-------------让目录页分栏，这样较多的目录项就可以放在一页上，如下代码如下：
+%\usepackage{multicol}
+%......
+%\begin{frame}
+%\frametitle{Contents}
+%\begin{multicols}{2}
+%	\tableofcontents
+%\end{multicols}
+%\end{frame}
+
+%-------------------------右下角页码--------------------------
+%\setbeamertemplate{footline}[frame number] 
+%-------------------在每一子章节前有一张胶片显示目录  
+%\AtBeginSection[]  
+%{  
+%	\begin{frame}<beamer>  
+%	\tableofcontents[currentsection]  
+%\end{frame}  
+%}  
+% ------------------设置用acrobat打开就会全屏显示  
+%\hypersetup{pdfpagemode=FullScreen}
+
+%--------------------是否逐条显示--------------------
+% 除掉以下命令的注解 "%" 后, 许多环境都会自动逐段显示（逐条显示）
+%\beamerdefaultoverlayspecification{<+->}
+
+%------------------ transparent for marks-------------
+% 设置覆盖的效果，透明  
+\setbeamercovered{transparent}  
+\usefonttheme[onlysmall]{structurebold} 
+
+
+

@@ -1,0 +1,144 @@
+%===================================
+%% Self defined command
+%===================final options====================
+
+% ------------------设置用acrobat打开就会全屏显示,在sty文件里已经设置了  
+%\hypersetup{pdfpagemode=FullScreen}
+
+%--------------------是否逐条显示--------------------
+%\beamerdefaultoverlayspecification{<+->}
+
+%% remove the bottom navigation bar
+%\setbeamertemplate{navigation symbols}{}
+
+
+%================packages===============================
+%%已有的package：
+%hyperref, mathtools, bm
+%babel
+%amsrefs
+\usepackage{float}
+\usepackage{multirow}%表格
+\usepackage{latexsym}
+\usepackage{amsmath,amssymb}
+\usepackage{color,xcolor}
+\usepackage{algorithm}
+\usepackage{amsthm}
+\usepackage{graphicx}%图表
+\usepackage{wrapfig}%图表
+\usepackage{supertabular}
+\usepackage{harvard}%citation宏包
+\usepackage{xeCJK}
+
+
+%======================================================
+%-----------------------others---------------------------
+\newcommand{\eps}{\varepsilon}%简化$\varepsilon$的表示
+%================theorem environments==========
+%% Note: the following theorem environments
+%%       already defined in mathbeamer.cfg
+%%       Not need to define it again
+%%\theoremstyle{plain}
+%%\newtheorem{thm}{Theorem}[section]
+%%\newtheorem{lem}[thm]{Lemma}
+%%\newtheorem{prop}[thm]{Proposition}
+%%\newtheorem{cor}[thm]{Corollary}
+%%\theoremstyle{definition}
+%%\newtheorem{defn}[thm]{Definition}
+%%\theoremstyle{example}
+%%\newtheorem{conj}{Conjecture}
+%%\newtheorem{exmp}{Example}
+%%\newtheorem*{rmk}{Remark}
+%%\theoremstyle{break}
+%%\newtheorem{bthm}{Theorem}[section]
+%%\newtheorem{blem}[thm]{Lemma}
+%%\newtheorem{bprop}[thm]{Proposition}
+%%\newtheorem{bcor}[thm]{Corollary}
+\newcommand{\mthm}{Theorem}
+%===================================================
+%---------------------------中文字体
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-Bold}]{NotoSerifCJKsc-Regular}
+\setCJKsansfont{NotoSerifCJKsc-Regular}
+
+%----------------------行距%段间距
+%\linespread{1.3}
+%\setlength{\baselineskip}{20pt}%行距设为20磅
+
+\setlength{\parskip}{0.5\baselineskip}%段间距=(1+0.5)行间距,/par should be used
+%=========================preferences==========================
+%---------------item的符号改为三角形
+\setbeamertemplate{items}[triangle]%[circle,ball,]
+
+%----------------citation
+\citationstyle{dcu}%-----author,year
+%\bibliographystyle{}
+
+%======================at documents===================================
+%-------以下命令让幻灯片在每一小节之前都显示一下目录（并突出显示出当前节目录
+\AtBeginSection[]
+{
+	\begin{frame}[shrink]
+	\thispagestyle{empty}
+	\addtocounter{framenumber}{-1}
+	\tableofcontents[
+	currentsection,
+	subsectionstyle=shaded/shaded/hide]
+\end{frame}
+}
+\AtBeginSubsection[]
+{
+	\begin{frame}[shrink]
+	\thispagestyle{empty}
+	\addtocounter{framenumber}{-1}
+	\tableofcontents[
+	sectionstyle=show/shaded,
+	subsectionstyle=show/shaded/hide]
+\end{frame}
+}
+
+\AtBeginDocument{%
+%=============================
+%-------------目录页
+%==============================
+\begin{frame}[shrink]{
+	\sc{Contents}}        %生成目录页，目录太长时加选项[shrink]
+	%	\setcounter{page}{0}	
+	\addtocounter{framenumber}{-2}%-----------位置放在beginframe之后，不然无效
+	\thispagestyle{empty}
+
+	
+%%%%--------------------分栏的目录
+\begin{multicols}{2}
+	\tableofcontents%[hideallsubsections]%,pausesections] 
+	% 使目录section一个一个出现的动画效果 [pausesections]
+	%列目录时，隐藏所有的小节\tableofcontents[hideallsubsections]
+\end{multicols}
+
+\end{frame}
+}
+
+\AtEndDocument{%
+	%========================
+	% thanks
+	%========================
+	%\section{Thanks}
+	\newcounter{ffn}
+	\setcounter{ffn}{\value{framenumber}}
+	\renewcommand{\insertframenumber}{\inserttotalframenumber}
+	\begin{frame}
+	\begin{center}
+		\LARGE{\bfseries
+			Thanks!
+		}
+	\end{center}
+\end{frame}
+	%========================
+	% bibliography
+	%========================
+%\section{Reference}
+\begin{frame}[t, allowframebreaks]{Reference}
+\bibliography{slides/bib}
+\end{frame}
+\setcounter{framenumber}{\value{ffn}}
+}
+
